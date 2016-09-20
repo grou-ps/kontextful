@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <style>
+            body { 
+                min-width: 420px; 
+                overflow-x: hidden; 
+                font-family: Arial, sans-serif; 
+                font-size: 12px; 
+            }
+            input, textarea { 
+                width: 420px; 
+            }
+            input#share, input#everyone, input#second { 
+                font-weight: bold; width: 100px; 
+            }
+            .overlay
+			{
+			   background-color: #fff;
+			   opacity: .9;
+			   filter: alpha(opacity=70);
+			   position: absolute; top: 0; left: 0;
+			   width: 100%; height: 100%;
+			   z-index: 10;
+			   display: none;
+			}
+			.overlay table
+			{
+			   width:100%;
+			   height:100%;
+			   margin:0;
+			   padding:0;
+			}
+			.overlay table td
+			{
+			   vertical-align: middle;
+			   text-align: center;
+			   width:100%;
+			}
+			#invite {
+				font-size:10px;
+				line-height:10px;
+				text-align:right;
+				margin:0;
+			}
+        </style>
+        <script type="text/javascript" src="background.js"></script>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+    <div id="overlay" class="overlay">
+    	<table><tr><td id="overlay_content"></td></tr></table>
+    </div>
+    <div id="fb-root"></div>
+    <div id="invite"><a href="http://kontextful.com/invite.hh" target="_blank">Invite your friends</a></div>
+        <form id="kontextful">
+            <p style="margin-top:3px;"><label for="title">Title</label><br />
+            <input type="text" id="title" name="title" size="50" value="" disabled /></p>
+            <p><label for="url">Link</label><br />
+            <input type="text" id="url" name="url" size="50" value="" disabled /></p>
+            <p><label for="comments">Comments</label><br />
+            <textarea id="comments" name="comments" rows="6" autofocus cols="35"></textarea></p>
+            <p>
+                <input id="share" type="button" data-cid="" value="... Thinking ..." /> 
+                &nbsp;
+                <input id="second" type="button" data-cid="" value="... Thinking ..." /> 
+                &nbsp;
+                <input id="everyone" type="button" value="Everyone" /> &nbsp;<small><a id="others" target="_blank">or share w/ others</a></small>
+                <span id="status-display"></span>
+            </p>
+            <input type="hidden" name="context_type" id="context_type" value="facebookgroups" />
+            <input type="hidden" name="context_id" id="context_id" />
+        </form>
+    </body>
+</html>

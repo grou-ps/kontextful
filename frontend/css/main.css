@@ -1,0 +1,55 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Nunito:700);
+.navbar-brand {
+    font-family: 'Nunito';
+    font-size: 28px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #7608AA;
+    COLOR: #127BA3;
+}
+
+.jumbotron h1 {
+    font-size:40px;
+}
+
+.jumbotron p {
+    font-size:18px;
+    width: 500px;
+}
+
+body {
+	padding-top:0;
+	padding-bottom:0;
+}
+
+.modal {
+	z-index: 2050;
+}
+
+.modal.fade .modal-dialog {
+	z-index: 2049;	
+}
+/*
+.btn-primary {
+    background-color: #4C036E;
+    border-color: #3C005A;
+}
+
+.btn-success {
+    background-color: #98ED00;
+    border-color: #8ECF00;
+}
+
+*/
+
+
+

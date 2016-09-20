@@ -1,0 +1,65 @@
+# https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/List_Open_Tabs
+require("sdk/ui/button/action").ActionButton({
+  id: "list-tabs",
+  label: "List Tabs",
+  icon: "./icon-16.png",
+  onClick: listTabs
+});
+
+function listTabs() {
+  var tabs = require("sdk/tabs");
+  for each (var tab in tabs)
+    runScript(tab);
+}
+
+function runScript(tab) {
+  tab.attach({
+    contentScript: "document.body.style.border = '5px solid red';"
+  });
+}
+
+# https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/ui
+var ui = require("sdk/ui");
+
+var action_button = ui.ActionButton({
+  id: "my-button",
+  label: "Action Button!",
+  icon: "./icon.png",
+  onClick: function(state) {
+    console.log("You clicked '" + state.label + "'");
+  }
+});
+
+
+# https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/panel#Attaching_panels_to_buttons
+var { ToggleButton } = require('sdk/ui/button/toggle');
+var panels = require("sdk/panel");
+var self = require("sdk/self");
+
+var button = ToggleButton({
+  id: "my-button",
+  label: "my button",
+  icon: {
+    "16": "./icon-16.png",
+    "32": "./icon-32.png",
+    "64": "./icon-64.png"
+  },
+  onChange: handleChange
+});
+
+var panel = panels.Panel({
+  contentURL: self.data.url("panel.html"),
+  onHide: handleHide
+});
+
+function handleChange(state) {
+  if (state.checked) {
+    panel.show({
+      position: button
+    });
+  }
+}
+
+function handleHide() {
+  button.state('window', {checked: false});
+}

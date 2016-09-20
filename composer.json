@@ -1,0 +1,12 @@
+{
+    "require": {
+        "nlp-tools/nlp-tools": "1.0.*@dev",
+	    "facebook/php-sdk": "@stable",
+        "aws/aws-sdk-php": "2.*",
+        "videlalvaro/php-amqplib": "2.5.*",
+	 "monolog/monolog": ">=1.8.0",
+	 "predis/predis": "dev-master",
+	"davefx/phplot": "dev-master",
+	"phpmailer/phpmailer": "dev-master"
+    }
+}

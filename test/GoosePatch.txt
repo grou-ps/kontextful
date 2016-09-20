@@ -1,0 +1,6 @@
+https://github.com/jiminoc/goose/blob/master/src/main/scala/com/gravity/goose/TalkToMeGoose.scala
+
+println("~~~Title: "+article.title)
+println("~~~Keywords: "+article.metaKeywords)
+println("~~~Description: "+article.metaDescription)
+println("~~~Article: "+article.cleanedArticleText)
